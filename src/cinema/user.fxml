@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cinema.user1">
+   <children>
+      <BorderPane layoutX="269.0" layoutY="100.0" prefHeight="600.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane fx:id="topForm" prefHeight="42.0" prefWidth="900.0" styleClass="top-form" stylesheets="@user.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="close" layoutX="848.0" layoutY="8.0" mnemonicParsing="false" onAction="#close" prefHeight="26.0" prefWidth="30.0" styleClass="close" stylesheets="@user.css" text="X" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
+                  <Button fx:id="minimize" layoutX="828.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimize" prefHeight="14.0" prefWidth="42.0" styleClass="minimize" stylesheets="@user.css" text="-" AnchorPane.topAnchor="2.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="42.0" layoutY="12.0" text="QuickFlicks Booking System">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="nav-form" stylesheets="@user.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="64.0" layoutY="121.0" text="Welcome" textFill="#faf7f7">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="username" alignment="TOP_CENTER" layoutX="71.0" layoutY="153.0" onKeyTyped="#displayUsername" text="Admin" textFill="#ece9e9">
+                     <font>
+                        <Font name="Microsoft Sans Serif" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="availableMovies_btn" layoutX="12.0" layoutY="283.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="35.0" prefWidth="175.0" styleClass="nav-btn" text="Available Movies" />
+                  <Button fx:id="signout" layoutX="14.0" layoutY="513.0" mnemonicParsing="false" onAction="#logout" styleClass="signout" text="Sign Out" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="558.0" prefWidth="691.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="4.0" layoutY="250.0" prefHeight="307.0" prefWidth="696.0" styleClass="bg-white" stylesheets="@user.css">
+                     <children>
+                        <AnchorPane prefHeight="307.0" prefWidth="234.0" styleClass="info-card">
+                           <children>
+                              <Label fx:id="availableMovies_title" alignment="CENTER" layoutX="5.0" layoutY="177.0" prefHeight="20.0" prefWidth="223.0" text="Label" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="103.0" layoutY="206.0" text="Title">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="12.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutX="53.0" layoutY="14.0" prefHeight="154.0" prefWidth="127.0" styleClass="bg-white" stylesheets="@user.css">
+                                 <children>
+                                    <ImageView fx:id="availableMovies_imageView" fitHeight="154.0" fitWidth="127.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" styleClass="bg-white" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="510.0" layoutY="61.0" text="Price ($)">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="251.0" layoutY="14.0" text="Purchase Ticket">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="19.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="397.0" layoutY="61.0" text="Quantity">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="262.0" layoutY="103.0" text="Special Class:">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="262.0" layoutY="147.0" text="Normal Class:">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="availableMovie_specialClass_price" layoutX="522.0" layoutY="102.0" text="\$0.0">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="availableMovie_normalClass_price" layoutX="521.0" layoutY="147.0" text="\$0.0">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="578.0" layoutY="184.0" text="Total: ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="availableMovie_total" layoutX="627.0" layoutY="187.0" text="\$0.0">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="availableMovie_buy" layoutX="584.0" layoutY="227.0" mnemonicParsing="false" onAction="#buy" prefHeight="36.0" prefWidth="69.0" styleClass="buy-btn" text="Buy" />
+                        <Button fx:id="availableMovie_clear" layoutX="251.0" layoutY="227.0" mnemonicParsing="false" onAction="#clearPurchaseTicketInfo" prefHeight="36.0" prefWidth="69.0" styleClass="clear-btn" text="Clear" textFill="WHITE" />
+                        <Spinner fx:id="availableMovie_specialClass_quality" layoutX="392.0" layoutY="98.0" onMouseClicked="#getSpinnerValue" prefHeight="24.0" prefWidth="62.0" />
+                        <Spinner fx:id="availableMovie_normalClass_quality" layoutX="392.0" layoutY="142.0" onMouseClicked="#getSpinnerValue" prefHeight="24.0" prefWidth="62.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="1.0" prefHeight="241.0" prefWidth="698.0" styleClass="bg-white" stylesheets="@user.css">
+                     <children>
+                        <AnchorPane layoutY="5.0" prefHeight="230.0" prefWidth="234.0" styleClass="info-card" AnchorPane.topAnchor="5.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" text="Movie Title:">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="availableMovies_movieTitle" layoutX="94.0" layoutY="14.0" prefWidth="126.0" styleClass="label-info">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="39.0" layoutY="46.0" text="Genre:">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="availableMovies_genre" layoutX="94.0" layoutY="46.0" prefWidth="126.0" styleClass="label-info">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="48.0" layoutY="79.0" text="Date:">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="availableMovies_date" layoutX="94.0" layoutY="79.0" prefHeight="16.0" prefWidth="126.0" styleClass="label-info">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="availableMovies_selectMovie" layoutX="75.0" layoutY="130.0" mnemonicParsing="false" onAction="#selectMovie" styleClass="insert-btn" text="Select Movie" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="availableMovies_tableView" layoutX="243.0" layoutY="3.0" onMouseClicked="#selectedAvailableMovies" prefHeight="234.0" prefWidth="454.0">
+                           <columns>
+                              <TableColumn fx:id="availableMovies_col_movieTitle" prefWidth="232.0" text="Movie Title" />
+                              <TableColumn fx:id="availableMovies_col_genre" prefWidth="102.39996337890625" text="Genre" />
+                              <TableColumn fx:id="availableMovies_col_showingDate" prefWidth="140.800048828125" text="Showing Date" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

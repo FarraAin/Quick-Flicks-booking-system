@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="474.0" prefWidth="549.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cinema.FXMLDocumentController">
+   <children>
+      <!-- Sign-In Form -->
+      <AnchorPane fx:id="signin_form" onKeyTyped="#userLogin" prefHeight="474.0" prefWidth="549.0" styleClass="bg-form" stylesheets="@logindesign.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <!-- Title -->
+            <Label layoutX="237.0" layoutY="120.0" prefHeight="42.0" prefWidth="73.0" text="Sign In" textFill="#f7f2f2">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            
+            <!-- Username Field -->
+            <TextField fx:id="signin_username" layoutX="165.0" layoutY="190.0" onAction="#userLogin" onKeyTyped="#userLogin" prefHeight="28.0" prefWidth="220.0" promptText="Username" styleClass="textfield">
+               <tooltip>
+                  <Tooltip text="Insert your username" />
+               </tooltip></TextField>
+            
+            <!-- Password Field -->
+            <PasswordField fx:id="signin_password" layoutX="165.0" layoutY="240.0" onAction="#userLogin" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="textfield">
+               <tooltip>
+                  <Tooltip text="Insert your password" />
+               </tooltip></PasswordField>
+            
+            <!-- User Login Button -->
+            <Button fx:id="user_loginBtn" layoutX="225.0" layoutY="302.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="35.0" prefWidth="100.0" styleClass="login-btn" text="User Login">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Button>
+            
+            <!-- Create Account Link -->
+            <Hyperlink fx:id="signin_createAcc" alignment="CENTER" layoutX="4.0" layoutY="350.0" onAction="#switchForm" prefHeight="22.0" prefWidth="542.0" text="Create a new account?" />
+            
+            <!-- Close Button -->
+            <Button fx:id="signin_close" layoutX="510.0" layoutY="10.0" mnemonicParsing="false" onAction="#signin_close" prefHeight="30.0" prefWidth="30.0" styleClass="close" text="X" />
+            
+            <!-- Minimize Button -->
+            <Button fx:id="signin_minimize" layoutX="470.0" layoutY="10.0" mnemonicParsing="false" onAction="#signin_minimize" prefHeight="30.0" prefWidth="30.0" styleClass="minimize" text="-" />
+            <Hyperlink fx:id="admin_login" alignment="CENTER" layoutX="4.0" layoutY="372.0" onAction="#switchForm1" prefHeight="22.0" prefWidth="542.0" text="Admin login" />
+         </children>
+      </AnchorPane>
+      
+      <!-- Sign-Up Form (Hidden by Default) -->
+      <AnchorPane fx:id="signUp_form" prefHeight="474.0" prefWidth="549.0" styleClass="bg-form" stylesheets="@logindesign.css" visible="false">
+         <children>
+            <!-- Title -->
+            <Label layoutX="233.0" layoutY="120.0" prefHeight="42.0" prefWidth="81.0" text="Sign Up" textFill="#f7f2f2">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            
+            <!-- Email Field -->
+            <TextField fx:id="signUp_email" layoutX="164.0" layoutY="190.0" prefHeight="28.0" prefWidth="220.0" promptText="Email Address" styleClass="textfield" />
+            
+            <!-- Username Field -->
+            <TextField fx:id="signUp_username" layoutX="164.0" layoutY="240.0" prefHeight="28.0" prefWidth="220.0" promptText="Username" styleClass="textfield" />
+            
+            <!-- Password Field -->
+            <PasswordField fx:id="signUp_password" layoutX="164.0" layoutY="290.0" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="textfield" />
+            
+            <!-- Sign-Up Button -->
+            <Button fx:id="signUp_btn" layoutX="232.0" layoutY="340.0" mnemonicParsing="false" onAction="#signUp" onKeyTyped="#signUp" prefHeight="35.0" prefWidth="88.0" styleClass="signup-btn" text="Sign Up">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Button>
+            
+            <!-- Already Have Account Link -->
+            <Hyperlink fx:id="signUp_alreadyHaveAcc" alignment="CENTER" layoutX="5.0" layoutY="390.0" onAction="#switchForm" prefHeight="22.0" prefWidth="542.0" text="Already have an account?" />
+            
+            <!-- Close Button -->
+            <Button fx:id="signUp_close" layoutX="510.0" layoutY="10.0" mnemonicParsing="false" onAction="#signup_close" prefHeight="30.0" prefWidth="30.0" styleClass="close" text="X" />
+            
+            <!-- Minimize Button -->
+            <Button fx:id="signUp_minimize" layoutX="470.0" layoutY="10.0" mnemonicParsing="false" onAction="#signup_minimize" prefHeight="30.0" prefWidth="30.0" styleClass="minimize" text="-" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="signin_form1" onKeyTyped="#userLogin" prefHeight="474.0" prefWidth="549.0" styleClass="bg-form" stylesheets="@logindesign.css" visible="false">
+         <children>
+            <Label layoutX="217.0" layoutY="123.0" prefHeight="42.0" prefWidth="135.0" text="Admin Login" textFill="#f7f2f2">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="signin_username1" layoutX="165.0" layoutY="190.0" onAction="#adminLogin" onKeyTyped="#userLogin" prefHeight="28.0" prefWidth="220.0" promptText="Username" styleClass="textfield" />
+            <PasswordField fx:id="signin_password1" layoutX="165.0" layoutY="240.0" onAction="#adminLogin" prefHeight="30.0" prefWidth="220.0" promptText="Password" styleClass="textfield" />
+            <Button fx:id="signin_close1" layoutX="510.0" layoutY="10.0" mnemonicParsing="false" onAction="#signin_close" prefHeight="30.0" prefWidth="30.0" styleClass="close" text="X" />
+            <Button fx:id="signin_minimize1" layoutX="470.0" layoutY="10.0" mnemonicParsing="false" onAction="#signin_minimize" prefHeight="30.0" prefWidth="30.0" styleClass="minimize" text="-" />
+            <Button fx:id="admin_loginBtn" layoutX="225.0" layoutY="301.0" mnemonicParsing="false" onAction="#adminLogin" prefHeight="35.0" prefWidth="100.0" styleClass="login-btn" text="Admin Login">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="12.0" />
+               </font>
+            </Button>
+            <Hyperlink fx:id="userBack" alignment="CENTER" layoutX="4.0" layoutY="350.0" onAction="#switchForm1" prefHeight="22.0" prefWidth="542.0" text="Back to user login" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
